@@ -1,0 +1,66 @@
+﻿<?xml version="1.0"?>
+<openerp>
+<data>
+    <!-- Dashboard amb les Sessions del dia i les pel·lícules actives-->
+
+    <!-- L'acció seguent, l'hem fet per poder filtrar les sessions DEL DIA amb el domain indicat.
+         En teoria, el domain es pot indicar com atribut de l'element action en la vista board.board
+         tal i com està comentat més avall, però únicament funciona si s'indica una data concreta,
+         per exemple 2012-12-10 i no pas cridant una funció que faciliti la data del dia.
+         Per això, l'atribut action crida la nova acció aquí definida, enlloc de la que ja teníem-->
+
+    <record model="ir.actions.act_window" id="action_cinema_sessions_of_day">
+        <field name="name">Sessions</field>
+        <field name="res_model">cinema.session</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <!-- Com que "init" és -malauradament- de tipus datetime i està enregistrat com a UTF, no n'hi ha prou
+             amb comparar amb les dates... ja que una pel·lícula que es projecta a les 00:30 Hora Madrid, està 
+             enregistrada a les 23:30 UTC... (en horari d'hivern)... Per tant, cal aconseguir preguntar si:
+             init >= Hora 00:00 del dia - Hores de desfàs respecte UTC (init >= Dia Anterior 23:00)
+             init < Hora 24:00 del dia - Hores de desfàs respecte UTC (init < Dia Avui 23:00)
+             Això sembla haver-se aconseguit amb les següents condicions...
+             time.timezone són els segons de desfàs entre l'hora local i UTC => Dividim per 3600
+             Per cert... Resulta que la longitud del contingut del domain no pot superar 256 caràcters... Glups! -->
+        <field name="domain">[('init','&gt;=',(datetime.date.today()+relativedelta(hours=+time.timezone/3600)).strftime('%Y-%m-%d %H:%M')),('init','&lt;',(datetime.date.today()+relativedelta(hours=+time.timezone/3600,days=1)).strftime('%Y-%m-%d %H:%M'))]</field>
+    </record>
+    
+    <record model="ir.ui.view" id="board_sessions_films">
+      <field name="name">board.sessions.films</field>
+      <field name="model">board.board</field>
+      <field name="type">form</field>
+      <field name="arch" type="xml">
+        <form string="Sessions of day  Active films">
+          <board style="1-1">
+            <column>
+              <action string="Sessions of day"
+                  name="%(cinema.action_cinema_sessions_of_day)d"
+                  view_mode="tree,form"
+                  creatable="true"/>
+              <!--action string="Sessions of day"
+                  name="%(cinema.action_cinema_sessions_of_day)d"
+                  view_mode="tree,form,calendar"
+                  creatable="true"
+                  domain="[('init','=',time.strftime('%%Y-%%m-%%d'))]"/-->
+            </column>
+            <column>
+              <action string="Active films"
+                  name="%(cinema.action_cinema_film)d"
+                  view_mode="tree,form"/>
+            </column>
+          </board>
+        </form>
+      </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_board_sessions_films">
+      <field name="name">Sessions Films Dashboard</field>
+      <field name="res_model">board.board</field>
+      <field name="view_type">form</field>
+      <field name="view_mode">form</field>
+      <field name="usage">menu</field>
+      <field name="view_id" ref="board_sessions_films"/>
+    </record>
+    <menuitem name="Dashboards" id="menu_cinema_dashboards" parent="menu_cinema" sequence="98" />
+    <menuitem name="Sessions Films Dashboard" id="menu_board_sessions_films" action="action_board_sessions_films" parent="menu_cinema_dashboards"/>
+</data>
+</openerp>

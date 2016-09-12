@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+  <data>
+    <report
+        id="film_with_sessions_LO"
+        model="cinema.film"
+        name="FilmWithSessionsLO"
+        rml="cinema/report/film_with_sessions.rml"
+        header="True"
+        string="Film with sessions (LO)"/>
+    <report
+        id="film_with_sessions_JR"
+        model="cinema.film"
+        name="FilmWithSessionsJR"
+        rml="cinema/report/film_with_sessions.jrxml"
+        header="False"
+        string="Film with sessions (JR)"/>
+  </data>
+</openerp>

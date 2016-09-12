@@ -1,0 +1,885 @@
+# Translation of OpenERP Server.
+# This file contains the translation of the following modules:
+# 	* cinema
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: OpenERP Server 6.1-20120803-233417\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-12-09 11:04+0000\n"
+"PO-Revision-Date: 2013-12-09 12:19+0100\n"
+"Last-Translator: Isidre Guixà <iguixa@xtec.cat>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"X-Generator: Poedit 1.5.5\n"
+
+#. module: cinema
+#: field:cinema.film,web:0
+msgid "Web"
+msgstr "Web"
+
+#. module: cinema
+#: sql_constraint:cinema.session:0
+msgid "The list (film, screen, date & hour) must be unique!"
+msgstr "La terna (film, sala, data & hora) ha de ser única!"
+
+#. module: cinema
+#: view:cinema.director:0
+msgid "Title"
+msgstr "Títol"
+
+#. module: cinema
+#: model:ir.model,name:cinema.model_cinema_session_type
+msgid "cinema.session.type"
+msgstr "cinema.session.type"
+
+#. module: cinema
+#: view:cinema.change.rates:0
+#: model:ir.actions.act_window,name:cinema.action_cinema_change_rates
+#: model:ir.ui.menu,name:cinema.menu_cinema_change_rates
+msgid "Calculating new prices via application rate"
+msgstr "Calcular nous preus via aplicació percentual"
+
+#. module: cinema
+#: help:cinema.film,duration:0
+msgid "Duration in minutes"
+msgstr "Duració en minuts"
+
+#. module: cinema
+#: view:cinema.director:0 field:cinema.director,film_ids:0 view:cinema.film:0
+#: model:ir.actions.act_window,name:cinema.action_cinema_film
+#: model:ir.ui.menu,name:cinema.menu_cinema_film
+msgid "Films"
+msgstr "Pel·lícules"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0 report:FilmWithSessionsLO:0
+#: field:cinema.session,n_tickets:0 field:cinema.ticket.detail,n_tickets:0
+msgid "Number of tickets"
+msgstr "Nombre de tiquets"
+
+#. module: cinema
+#: view:cinema.ticket:0
+msgid "Date of sale"
+msgstr "Data de venda"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0 view:cinema.director:0
+#: field:cinema.director,name:0 field:cinema.film,director_id:0
+msgid "Director"
+msgstr "Director"
+
+#. module: cinema
+#: sql_constraint:cinema.screen:0 sql_constraint:cinema.session.type:0
+#: sql_constraint:cinema.viewer.category:0
+msgid "The name must be unique!"
+msgstr "El nom ha de ser únic!"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "$F{init}"
+msgstr "$F{init}"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "/data/record/Year-year"
+msgstr "/data/record/Year-year"
+
+#. module: cinema
+#: view:cinema.ticket:0
+msgid "Tickets"
+msgstr "Tiquets"
+
+#. module: cinema
+#: code:addons\cinema\cinema.py:433
+#, python-format
+msgid "You must enter a session before to enter the detail"
+msgstr "Heu d'introduir una sessió abans d'introduir el detall"
+
+#. module: cinema
+#: field:cinema.film,synopsis:0
+msgid "Synopsis"
+msgstr "Resum"
+
+#. module: cinema
+#: model:cinema.session.type,name:cinema.cinema_session_type_fes
+msgid "Festiu"
+msgstr "Festiu"
+
+#. module: cinema
+#: constraint:cinema.film:0
+msgid ""
+"The first film was considered Roundhay Garden Scene in 1888. Accordingly, "
+"there can be no previous films this year."
+msgstr ""
+"The first film was considered Roundhay Garden Scene in 1888. Accordingly, "
+"there can be no previous films this year."
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "$F{id}"
+msgstr "$F{id}"
+
+#. module: cinema
+#: model:cinema.film,name:cinema.cinema_film_mujeres
+msgid "Mujeres al borde de un ataque de nervios"
+msgstr "Mujeres al borde de un ataque de nervios"
+
+#. module: cinema
+#: model:ir.actions.act_window,name:cinema.action_cinema_ticket2
+#: model:ir.ui.menu,name:cinema.menu_cinema_ticket2
+msgid "Tickets (Version 2)"
+msgstr "Tiquets (versió 2)"
+
+#. module: cinema
+#: view:cinema.session.type:0
+#: model:ir.actions.act_window,name:cinema.action_cinema_session_type
+#: model:ir.ui.menu,name:cinema.menu_cinema_session_type
+msgid "Session types"
+msgstr "Tipus de sessió"
+
+#. module: cinema
+#: view:cinema.change.rates:0
+msgid "(Empty, to change all viewer categories)"
+msgstr "(Buit, per canviar totes les categories)"
+
+#. module: cinema
+#: model:cinema.film,name:cinema.cinema_film_casablanca
+msgid "Casablanca"
+msgstr "Casablanca"
+
+#. module: cinema
+#: field:cinema.change.rates,info_updates:0
+msgid "Number of updated rates"
+msgstr "Nombre de preus actualitzats"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "$F{duration}"
+msgstr "$F{duration}"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "$F{n_tickets}"
+msgstr "$F{n_tickets}"
+
+#. module: cinema
+#: constraint:cinema.film:0
+msgid "Duration must be greater than zero"
+msgstr "La duració ha de ser superior a zero"
+
+#. module: cinema
+#: model:ir.model,name:cinema.model_cinema_change_rates
+msgid "cinema.change.rates"
+msgstr "cinema.change.rates"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "$F{year}"
+msgstr "$F{year}"
+
+#. module: cinema
+#: view:cinema.viewer.category:0
+#: model:ir.actions.act_window,name:cinema.action_cinema_viewer_category
+#: model:ir.ui.menu,name:cinema.menu_cinema_viewer_category
+msgid "Viewer categories"
+msgstr "Categories d'espectadors"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "/data/record/id"
+msgstr "/data/record/id"
+
+#. module: cinema
+#: field:cinema.change.rates,state:0
+msgid "State"
+msgstr "Estat"
+
+#. module: cinema
+#: model:res.groups,name:cinema.group_cinema_ticketseller
+msgid "TicketSeller"
+msgstr "Venedor de tiquets"
+
+#. module: cinema
+#: report:FilmWithSessionsLO:0
+msgid "Director:"
+msgstr "Director:"
+
+#. module: cinema
+#: model:ir.model,name:cinema.model_cinema_rates
+msgid "cinema.rates"
+msgstr "cinema.rates"
+
+#. module: cinema
+#: model:ir.model,name:cinema.model_cinema_director
+msgid "cinema.director"
+msgstr "cinema.director"
+
+#. module: cinema
+#: field:cinema.change.rates,percentage:0
+msgid "Percentage to apply"
+msgstr "Percentatge a aplicar"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "new java.util.Date()"
+msgstr "new java.util.Date()"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "$F{dn}"
+msgstr "$F{dn}"
+
+#. module: cinema
+#: constraint:cinema.ticket.detail:0
+msgid "Number of tickets must be greater than zero"
+msgstr "El nombre de tiquets ha de ser major que zero"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "/data/record/Sessions-session_ids/Date___Time-init"
+msgstr "/data/record/Sessions-session_ids/Date___Time-init"
+
+#. module: cinema
+#: model:ir.ui.menu,name:cinema.menu_cinema_configuration
+msgid "Configuration"
+msgstr "Configuració"
+
+#. module: cinema
+#: model:cinema.session.type,name:cinema.cinema_session_type_lab
+msgid "Laborable"
+msgstr "Laborable"
+
+#. module: cinema
+#: field:cinema.film,cover:0
+msgid "Cover"
+msgstr "Portada"
+
+#. module: cinema
+#: view:cinema.change.rates:0
+msgid "Cancel"
+msgstr "Cancel·leu"
+
+#. module: cinema
+#: view:cinema.director:0
+#: model:ir.actions.act_window,name:cinema.action_cinema_director
+#: model:ir.ui.menu,name:cinema.menu_cinema_director
+msgid "Directors"
+msgstr "Directors"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "\"Page \"+$V{PAGE_NUMBER}+\" of\""
+msgstr "\"Page \"+$V{PAGE_NUMBER}+\" of\""
+
+#. module: cinema
+#: code:addons\cinema\cinema.py:236 code:addons\cinema\cinema.py:243
+#: code:addons\cinema\cinema.py:424 code:addons\cinema\cinema.py:433
+#: code:addons\cinema\cinema.py:464
+#, python-format
+msgid "Error! "
+msgstr "Error! "
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "/data/record/Duration-duration"
+msgstr "/data/record/Duration-duration"
+
+#. module: cinema
+#: model:ir.module.category,name:cinema.module_category_cinema
+#: model:ir.ui.menu,name:cinema.menu_cinema
+msgid "Cinema"
+msgstr "Cinema"
+
+#. module: cinema
+#: view:cinema.screen:0
+#: model:ir.actions.act_window,name:cinema.action_cinema_screen
+#: model:ir.ui.menu,name:cinema.menu_cinema_screen
+msgid "Screens"
+msgstr "Sales"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "$F{takings}"
+msgstr "$F{takings}"
+
+#. module: cinema
+#: view:cinema.session:0 field:cinema.session,name:0
+#: field:cinema.ticket,session_id:0 field:cinema.ticket.detail,ticket_id:0
+msgid "Session"
+msgstr "Sessió"
+
+#. module: cinema
+#: sql_constraint:cinema.rates:0
+msgid "The couple (session_type, viewer_category) must be unique!"
+msgstr "La parella (tipus de sessió, categoria d'espectador) ha de ser única!"
+
+#. module: cinema
+#: model:ir.actions.report.xml,name:cinema.film_with_sessions_JR
+msgid "Film with sessions (JR)"
+msgstr "Pel·lícula amb sessions (JR)"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "/data/record/Sessions-session_ids/Screen-screen_id/Screen-name"
+msgstr "/data/record/Sessions-session_ids/Screen-screen_id/Screen-name"
+
+#. module: cinema
+#: help:cinema.screen,cleaning_time:0
+msgid "Cleaning time in minutes"
+msgstr "Temps de neteja, en minuts"
+
+#. module: cinema
+#: field:cinema.viewer.category,name:0
+msgid "Category"
+msgstr "Categoria"
+
+#. module: cinema
+#: model:cinema.viewer.category,name:cinema.cinema_viewer_category_est
+msgid "Estudiant"
+msgstr "Estudiant"
+
+#. module: cinema
+#: field:cinema.screen,capacity:0 field:cinema.session,capacity:0
+msgid "Capacity"
+msgstr "Capacitat"
+
+#. module: cinema
+#: view:cinema.session:0
+msgid "Opened"
+msgstr "Oberta"
+
+#. module: cinema
+#: view:cinema.ticket:0 field:cinema.ticket,detail_ids:0
+msgid "Detail"
+msgstr "Detall"
+
+#. module: cinema
+#: view:cinema.rates:0
+#: model:ir.actions.act_window,name:cinema.action_cinema_rates
+#: model:ir.ui.menu,name:cinema.menu_cinema_ratees
+msgid "Rates"
+msgstr "Preus"
+
+#. module: cinema
+#: view:cinema.session:0
+msgid "Closed"
+msgstr "Tancada"
+
+#. module: cinema
+#: model:ir.model,name:cinema.model_cinema_viewer_category
+msgid "cinema.viewer.category"
+msgstr "cinema.viewer.category"
+
+#. module: cinema
+#: model:ir.model,name:cinema.model_cinema_ticket_detail
+msgid "cinema.ticket.detail"
+msgstr "cinema.ticket.detail"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "\" \" + $V{PAGE_NUMBER}"
+msgstr "\" \" + $V{PAGE_NUMBER}"
+
+#. module: cinema
+#: field:cinema.director,deathdate:0
+msgid "Death date"
+msgstr "Data de decés"
+
+#. module: cinema
+#: model:ir.model,name:cinema.model_cinema_film
+msgid "cinema.film"
+msgstr "cinema.film"
+
+#. module: cinema
+#: model:cinema.viewer.category,name:cinema.cinema_viewer_category_nor
+msgid "Normal"
+msgstr "Normal"
+
+#. module: cinema
+#: field:cinema.ticket,init:0
+msgid "unknown"
+msgstr "desconegut"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0 report:FilmWithSessionsLO:0
+#: field:cinema.screen,name:0 field:cinema.session,screen_id:0
+msgid "Screen"
+msgstr "Sala"
+
+#. module: cinema
+#: field:cinema.ticket,date_time_sale:0
+msgid "Date and hour of sale"
+msgstr "Data i hora de venda"
+
+#. module: cinema
+#: view:cinema.change.rates:0
+msgid "(Empty, to change all session types)"
+msgstr "(Buit, per canviar tots els tipus de sessió)"
+
+#. module: cinema
+#: view:cinema.film:0 field:cinema.film,active:0 field:cinema.ticket,active:0
+msgid "Active"
+msgstr "Activa"
+
+#. module: cinema
+#: report:FilmWithSessionsLO:0
+msgid ":"
+msgstr ":"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "/data/record/Film-name"
+msgstr "/data/record/Film-name"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "/data/record/Sessions-session_ids/Takings-takings"
+msgstr "/data/record/Sessions-session_ids/Takings-takings"
+
+#. module: cinema
+#: field:cinema.director,birthdate:0
+msgid "Birthdate"
+msgstr "Data de naixement"
+
+#. module: cinema
+#: view:cinema.session:0
+msgid "Date"
+msgstr "Data"
+
+#. module: cinema
+#: constraint:cinema.screen:0
+msgid "Cleaning time must be greater than zero"
+msgstr "Temps de neteja ha de ser major que zero"
+
+#. module: cinema
+#: view:cinema.change.rates:0
+msgid "Assign"
+msgstr "Assigneu"
+
+#. module: cinema
+#: model:ir.model,name:cinema.model_cinema_ticket
+msgid "cinema.ticket"
+msgstr "cinema.ticket"
+
+#. module: cinema
+#: field:cinema.screen,cleaning_time:0
+msgid "Cleaning time"
+msgstr "Temps de neteja"
+
+#. module: cinema
+#: sql_constraint:cinema.director:0
+msgid "The director name must be unique!"
+msgstr "El nom del director ha de ser únic!"
+
+#. module: cinema
+#: view:cinema.film:0
+msgid "Inactive"
+msgstr "Inactiva"
+
+#. module: cinema
+#: selection:cinema.change.rates,state:0
+msgid "Done"
+msgstr "Fet"
+
+#. module: cinema
+#: view:cinema.ticket:0
+msgid "Compute"
+msgstr "Calculeu"
+
+#. module: cinema
+#: view:cinema.change.rates:0
+msgid "Close"
+msgstr "Tanqueu"
+
+#. module: cinema
+#: constraint:cinema.change.rates:0
+msgid "Percentage must be greater than or equal to zero"
+msgstr "El percentatge ha de ser major o igual a zero"
+
+#. module: cinema
+#: constraint:cinema.rates:0
+msgid "Price must be greater than or equal to zero"
+msgstr "El preu ha de ser major o igual a zero"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0 report:FilmWithSessionsLO:0
+#: field:cinema.session,takings:0
+msgid "Takings"
+msgstr "Recaptació"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0 report:FilmWithSessionsLO:0
+#: selection:cinema.change.rates,state:0
+msgid "Init"
+msgstr "Data&Hora"
+
+#. module: cinema
+#: model:ir.ui.menu,name:cinema.menu_cinema_configuration_wizards
+msgid "Wizards"
+msgstr "Assistents"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "$F{fn}"
+msgstr "$F{fn}"
+
+#. module: cinema
+#: model:ir.actions.report.xml,name:cinema.film_with_sessions_LO
+msgid "Film with sessions (LO)"
+msgstr "Pel·lícula amb sessions (LO)"
+
+#. module: cinema
+#: field:cinema.change.rates,viewer_category_id:0
+#: field:cinema.rates,viewer_category_id:0
+#: field:cinema.ticket.detail,viewer_category_id:0
+msgid "Viewer category"
+msgstr "Categoria Espectador"
+
+#. module: cinema
+#: code:addons\cinema\cinema.py:424
+#, python-format
+msgid "The rate is not defined!!!"
+msgstr "El preu no està definit!"
+
+#. module: cinema
+#: constraint:cinema.director:0
+msgid "Death date must be later than birthdate"
+msgstr "La data de decés ha de ser posterior a la data de naixement"
+
+#. module: cinema
+#: model:ir.actions.act_window,name:cinema.action_cinema_ticket1
+#: model:ir.ui.menu,name:cinema.menu_cinema_ticket1
+msgid "Tickets (Version 1)"
+msgstr "Tiquets (Versió 1)"
+
+#. module: cinema
+#: report:FilmWithSessionsLO:0 view:cinema.film:0
+#: field:cinema.film,session_ids:0 view:cinema.session:0
+#: model:ir.actions.act_window,name:cinema.action_cinema_session
+#: model:ir.ui.menu,name:cinema.menu_cinema_session
+msgid "Sessions"
+msgstr "Sessions"
+
+#. module: cinema
+#: field:cinema.rates,price:0 field:cinema.ticket.detail,price:0
+msgid "Price"
+msgstr "Preu"
+
+#. module: cinema
+#: model:res.groups,name:cinema.group_cinema_manager
+msgid "Manager"
+msgstr "Gestor"
+
+#. module: cinema
+#: constraint:cinema.screen:0
+msgid "Capacity must be greater than zero"
+msgstr "La capacitat ha de ser major que zero"
+
+#. module: cinema
+#: field:cinema.change.rates,session_type_id:0
+#: field:cinema.rates,session_type_id:0 field:cinema.session,session_type_id:0
+#: field:cinema.session.type,name:0
+msgid "Session type"
+msgstr "Tipus de sessió"
+
+#. module: cinema
+#: field:cinema.director,country_id:0
+msgid "Nationality"
+msgstr "Nacionalitat"
+
+#. module: cinema
+#: view:cinema.ticket:0
+msgid "Ticket"
+msgstr "Tiquet"
+
+#. module: cinema
+#: model:cinema.film,synopsis:cinema.cinema_film_casablanca
+msgid ""
+"Rick Blaine (Humphrey Bogart) és un estatunidenc amarg i cínic expatriat a "
+"Casablanca. Dirigeix el «Rick's Café Américain» (El Café Americà d'en Rick), "
+"un cabaret i sala de joc que atreu una clientela variada, anant des de "
+"francesos col·laboracionistes i oficials nazis, fins a refugiats de guerra i "
+"bandits diversos. Encara que Rick diu ser neutral en totes les qüestions, es "
+"descobreix que va ser a Etiòpia per combatre la invasió italiana del 1935 i "
+"que va lluitar en el bàndol republicà a la guerra civil espanyola contra "
+"Franco.\n"
+"\n"
+"Ugarte (Peter Lorre), un bandit de poca estofa, arriba al local amb uns "
+"«passis de trànsit» obtinguts tot assassinant dos missatgers alemanys. "
+"Aquests passis permeten que el portador pugui viatjar lliurement per "
+"l'Europa controlada pels alemanys i arribar a països neutrals com Portugal, "
+"el que implica poder fugir a Amèrica. Els papers, doncs, tenen un valor "
+"inestimable per qualsevol dels refugiats que estan a Casablanca, i Ugarte "
+"planeja fer fortuna venent-los al millor postor que aquella nit arribi al "
+"club. Tanmateix, abans que aquest intercanvi pugui tenir lloc, Ugarte és "
+"arrestat per la policia local, per ordre del Capità Louis Renault (Claude "
+"Rains), un oportunista corrupte que diu de si mateix, «No tinc cap "
+"convicció... vaig on em dugui el vent, i el vent que ara preval resulta ser "
+"el de Vichy.» Tot i així, Renault i els nazis no saben que Ugarte havia "
+"confiat els papers a Rick perquè «... d'alguna manera, i perquè em "
+"menysprea, és l'únic en qui confio.»\n"
+"\n"
+"En aquest punt, la persona que és la causa de l'amargor de Rick entra un "
+"altre cop a la seva vida. La seva ex-amant, Ilsa Lund (Ingrid Bergman), "
+"arriba amb el seu marit Viktor László (Paul Henreid), un fugitiu de la "
+"resistència txeca que és buscat pels nazis. La parella necessita els papers "
+"per marxar cap a Amèrica i perquè Laszlo pugui continuar la lluita des "
+"d'allà.\n"
+"\n"
+"Ferrari (Sydney Greenstreet), rival de Rick en els negocis i una figura "
+"influent en el submón criminal de Casablanca, parla amb Laszlo i li fa "
+"entendre que Rick té els papers. László es troba amb Rick en privat, i "
+"aquest rebutja donar-li els documents tot dient-li que li pregunti la raó a "
+"la seva dona. Són interromputs en plena discussió quan un grup d'oficials "
+"nazis dirigits pel Major Strasser (Conrad Veidt) comencen a cantar «Die "
+"Wacht am Rhein», una cançó patriòtica alemanya. En resposta, László s'aixeca "
+"i diu a l'orquestra que toqui «La Marsellesa», l'himne nacional francès "
+"prohibit, símbol de llibertat. L'orquestra mira en Rick cercant la seva "
+"autorització i aquest fa que sí amb el cap. László comença a cantar; al "
+"principi és tot sol, però després el fervor patriòtic molt de temps reprimit "
+"s'encomana a la multitud i tothom hi participa, fent fora els alemanys. Com "
+"a venjança, Strasser ordena a Renault que tanqui el \n"
+"\n"
+"Aquella nit, a la cafeteria ja deserta, Ilsa s'encara a Rick. Quan aquest es "
+"nega a donar-li els passis, ella l'amenaça amb una pistola, però és incapaç "
+"de disparar, confessant que encara l'estima. Explica que quan el va conèixer "
+"i se'n va enamorar a París creia que el seu marit havia mort intentant "
+"escapar-se d'un camp de concentració nazi. Més tard, amb l'exèrcit alemany a "
+"punt de capturar la ciutat i quan havien de fugir junts, va saber que László "
+"era viu i que estava amagat; és per aquest motiu que va abandonar Rick sense "
+"cap explicació, per tornar al costat d'un László malalt.\n"
+"\n"
+"Amb aquesta revelació, l'amargor de Rick es dissol i els amants es "
+"reconcilien. Rick declara que l'ajudarà, i per encoratjar-la li fa creure "
+"que es quedarà amb ella quan Lászlo marxi. László apareix inesperadament, "
+"després d'haver escapat d'una batuda de la policia en una reunió de la "
+"resistència, i mentre els dos homes parlen, Ilsa resta amagada.\n"
+"\n"
+"László revela que és conscient de l'amor de Rick per Ilsa i intenta que Rick "
+"utilitzi els passis per salvar-la.\n"
+"\n"
+"Tanmateix, la policia arriba i arresta László amb una acusació "
+"insignificant. Rick convenç Renault d'alliberar-lo prometent que el podrà "
+"detenir per un delicte molt més seriós: el de la possessió dels passis "
+"robats. Per convèncer Renault, Rick li explica que a ell només li interessa "
+"poder anar-se'n a Amèrica amb Ilsa. Tanmateix, quan Renault intenta arrestar "
+"finalment en László, Rick se li encara i el força a punta de pistola a "
+"ajudar el fugitiu a escapar-se. I al darrer moment, Rick fa embarcar Ilsa "
+"amb el seu marit en l'avió de Lisboa dient-li que si no ho fes, a ella li "
+"sabria greu «Potser no avui, potser no demà, però aviat i per la resta de la "
+"seva vida.»\n"
+"\n"
+"Avisat per Renault, el Major Strasser arriba ràpidament, però quan tracta "
+"d'intervenir, Rick el mata d'un tret. Quan els reforços de policia arriben, "
+"Renault els atura i els diu que «arrestin els sospitosos habituals», "
+"protegint així Rick. Una vegada sols, Renault suggereix que marxin junts de "
+"Casablanca i que s'uneixin tots dos a la França Lliure a Brazzaville. Així, "
+"s'endinsen en la boira amb un dels textos més memorables de la història del "
+"cinema: «Louis, em penso que això és el començament d'una gran amistat.»"
+msgstr ""
+"Rick Blaine (Humphrey Bogart) és un estatunidenc amarg i cínic expatriat a "
+"Casablanca. Dirigeix el «Rick's Café Américain» (El Café Americà d'en Rick), "
+"un cabaret i sala de joc que atreu una clientela variada, anant des de "
+"francesos col·laboracionistes i oficials nazis, fins a refugiats de guerra i "
+"bandits diversos. Encara que Rick diu ser neutral en totes les qüestions, es "
+"descobreix que va ser a Etiòpia per combatre la invasió italiana del 1935 i "
+"que va lluitar en el bàndol republicà a la guerra civil espanyola contra "
+"Franco.\n"
+"\n"
+"Ugarte (Peter Lorre), un bandit de poca estofa, arriba al local amb uns "
+"«passis de trànsit» obtinguts tot assassinant dos missatgers alemanys. "
+"Aquests passis permeten que el portador pugui viatjar lliurement per "
+"l'Europa controlada pels alemanys i arribar a països neutrals com Portugal, "
+"el que implica poder fugir a Amèrica. Els papers, doncs, tenen un valor "
+"inestimable per qualsevol dels refugiats que estan a Casablanca, i Ugarte "
+"planeja fer fortuna venent-los al millor postor que aquella nit arribi al "
+"club. Tanmateix, abans que aquest intercanvi pugui tenir lloc, Ugarte és "
+"arrestat per la policia local, per ordre del Capità Louis Renault (Claude "
+"Rains), un oportunista corrupte que diu de si mateix, «No tinc cap "
+"convicció... vaig on em dugui el vent, i el vent que ara preval resulta ser "
+"el de Vichy.» Tot i així, Renault i els nazis no saben que Ugarte havia "
+"confiat els papers a Rick perquè «... d'alguna manera, i perquè em "
+"menysprea, és l'únic en qui confio.»\n"
+"\n"
+"En aquest punt, la persona que és la causa de l'amargor de Rick entra un "
+"altre cop a la seva vida. La seva ex-amant, Ilsa Lund (Ingrid Bergman), "
+"arriba amb el seu marit Viktor László (Paul Henreid), un fugitiu de la "
+"resistència txeca que és buscat pels nazis. La parella necessita els papers "
+"per marxar cap a Amèrica i perquè Laszlo pugui continuar la lluita des "
+"d'allà.\n"
+"\n"
+"Ferrari (Sydney Greenstreet), rival de Rick en els negocis i una figura "
+"influent en el submón criminal de Casablanca, parla amb Laszlo i li fa "
+"entendre que Rick té els papers. László es troba amb Rick en privat, i "
+"aquest rebutja donar-li els documents tot dient-li que li pregunti la raó a "
+"la seva dona. Són interromputs en plena discussió quan un grup d'oficials "
+"nazis dirigits pel Major Strasser (Conrad Veidt) comencen a cantar «Die "
+"Wacht am Rhein», una cançó patriòtica alemanya. En resposta, László s'aixeca "
+"i diu a l'orquestra que toqui «La Marsellesa», l'himne nacional francès "
+"prohibit, símbol de llibertat. L'orquestra mira en Rick cercant la seva "
+"autorització i aquest fa que sí amb el cap. László comença a cantar; al "
+"principi és tot sol, però després el fervor patriòtic molt de temps reprimit "
+"s'encomana a la multitud i tothom hi participa, fent fora els alemanys. Com "
+"a venjança, Strasser ordena a Renault que tanqui el \n"
+"\n"
+"Aquella nit, a la cafeteria ja deserta, Ilsa s'encara a Rick. Quan aquest es "
+"nega a donar-li els passis, ella l'amenaça amb una pistola, però és incapaç "
+"de disparar, confessant que encara l'estima. Explica que quan el va conèixer "
+"i se'n va enamorar a París creia que el seu marit havia mort intentant "
+"escapar-se d'un camp de concentració nazi. Més tard, amb l'exèrcit alemany a "
+"punt de capturar la ciutat i quan havien de fugir junts, va saber que László "
+"era viu i que estava amagat; és per aquest motiu que va abandonar Rick sense "
+"cap explicació, per tornar al costat d'un László malalt.\n"
+"\n"
+"Amb aquesta revelació, l'amargor de Rick es dissol i els amants es "
+"reconcilien. Rick declara que l'ajudarà, i per encoratjar-la li fa creure "
+"que es quedarà amb ella quan Lászlo marxi. László apareix inesperadament, "
+"després d'haver escapat d'una batuda de la policia en una reunió de la "
+"resistència, i mentre els dos homes parlen, Ilsa resta amagada.\n"
+"\n"
+"László revela que és conscient de l'amor de Rick per Ilsa i intenta que Rick "
+"utilitzi els passis per salvar-la.\n"
+"\n"
+"Tanmateix, la policia arriba i arresta László amb una acusació "
+"insignificant. Rick convenç Renault d'alliberar-lo prometent que el podrà "
+"detenir per un delicte molt més seriós: el de la possessió dels passis "
+"robats. Per convèncer Renault, Rick li explica que a ell només li interessa "
+"poder anar-se'n a Amèrica amb Ilsa. Tanmateix, quan Renault intenta arrestar "
+"finalment en László, Rick se li encara i el força a punta de pistola a "
+"ajudar el fugitiu a escapar-se. I al darrer moment, Rick fa embarcar Ilsa "
+"amb el seu marit en l'avió de Lisboa dient-li que si no ho fes, a ella li "
+"sabria greu «Potser no avui, potser no demà, però aviat i per la resta de la "
+"seva vida.»\n"
+"\n"
+"Avisat per Renault, el Major Strasser arriba ràpidament, però quan tracta "
+"d'intervenir, Rick el mata d'un tret. Quan els reforços de policia arriben, "
+"Renault els atura i els diu que «arrestin els sospitosos habituals», "
+"protegint així Rick. Una vegada sols, Renault suggereix que marxin junts de "
+"Casablanca i que s'uneixin tots dos a la França Lliure a Brazzaville. Així, "
+"s'endinsen en la boira amb un dels textos més memorables de la història del "
+"cinema: «Louis, em penso que això és el començament d'una gran amistat.»"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0 report:FilmWithSessionsLO:0
+msgid "Film with sessions"
+msgstr "Pel·lícula amb sessions"
+
+#. module: cinema
+#: code:addons\cinema\cinema.py:236
+#, python-format
+msgid ""
+"You can not start at this time because it overlaps with the next session!"
+msgstr ""
+"No pot començar a aquesta hora per què es solapa amb la sessió següent!"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "/data/record/Sessions-session_ids/Nombre_de_tiquets-n_tickets"
+msgstr "/data/record/Sessions-session_ids/Nombre_de_tiquets-n_tickets"
+
+#. module: cinema
+#: model:ir.model,name:cinema.model_cinema_session
+msgid "cinema.session"
+msgstr "cinema.session"
+
+#. module: cinema
+#: code:addons\cinema\cinema.py:464 constraint:cinema.session:0
+#, python-format
+msgid "There are not enough tickets!"
+msgstr "No hi ha suficients entrades!"
+
+#. module: cinema
+#: constraint:cinema.session:0
+msgid "You can not start at this time because it overlaps another session"
+msgstr "No pot començar a aquesta hora per què es solapa amb una altra sessió"
+
+#. module: cinema
+#: model:cinema.film,synopsis:cinema.cinema_film_mujeres
+msgid ""
+"Ivan i Pepa, dos actors de doblatge, posen la seva veu a les grans estrelles "
+"del cinema i es juren amor etern cada matí en la penombra de l'estudi. Però "
+"Ivan abandona de sobte Pepa. Aquesta portarà la seva investigació i "
+"descobrirà la doble vida de l'home que estima.\n"
+"        \n"
+"És una galeria de retrats: una amant que s'assabenta de cop que el seu amant "
+"la deixarà per a una altra; l'esposa legítima del susdit, que purga la seva "
+"depressió en una clínica psiquiàtrica i no pensa més que a barallar-se; la "
+"nova conquesta que no té ganes d'afluixar la brida al Don Juan a la fuga; el "
+"fill d'aquest últim, tartamut; una advocada feminista; la companya d'un "
+"terrorista chita; una conserge membre dels testimonis de Jehovà; un xofer de "
+"taxi punk; policies complaents; i gaspatxo amb somnífer per a tothom.\n"
+"        \n"
+"Un vodevil modern, lliurement inspirat de La veu Humana de Jean Cocteau, una "
+"obra de 1930 d’un acte que explica el llarg monòleg d'una dona al telèfon, "
+"abandonada pel seu amant."
+msgstr ""
+"Ivan i Pepa, dos actors de doblatge, posen la seva veu a les grans estrelles "
+"del cinema i es juren amor etern cada matí en la penombra de l'estudi. Però "
+"Ivan abandona de sobte Pepa. Aquesta portarà la seva investigació i "
+"descobrirà la doble vida de l'home que estima.\n"
+"        \n"
+"És una galeria de retrats: una amant que s'assabenta de cop que el seu amant "
+"la deixarà per a una altra; l'esposa legítima del susdit, que purga la seva "
+"depressió en una clínica psiquiàtrica i no pensa més que a barallar-se; la "
+"nova conquesta que no té ganes d'afluixar la brida al Don Juan a la fuga; el "
+"fill d'aquest últim, tartamut; una advocada feminista; la companya d'un "
+"terrorista chita; una conserge membre dels testimonis de Jehovà; un xofer de "
+"taxi punk; policies complaents; i gaspatxo amb somnífer per a tothom.\n"
+"        \n"
+"Un vodevil modern, lliurement inspirat de La veu Humana de Jean Cocteau, una "
+"obra de 1930 d’un acte que explica el llarg monòleg d'una dona al telèfon, "
+"abandonada pel seu amant."
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "/data/record/Director-director_id/Director-name"
+msgstr "/data/record/Director-director_id/Director-name"
+
+#. module: cinema
+#: field:cinema.session,init:0
+msgid "Date & Time"
+msgstr "Data & Hora"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0
+msgid "$F{sn}"
+msgstr "$F{sn}"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0 report:FilmWithSessionsLO:0
+#: field:cinema.film,year:0
+msgid "Year"
+msgstr "Any"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0 report:FilmWithSessionsLO:0
+#: field:cinema.film,duration:0
+msgid "Duration"
+msgstr "Durada"
+
+#. module: cinema
+#: model:ir.model,name:cinema.model_cinema_screen
+msgid "cinema.screen"
+msgstr "cinema.screen"
+
+#. module: cinema
+#: field:cinema.ticket,total:0 field:cinema.ticket.detail,total:0
+msgid "Total"
+msgstr "Total"
+
+#. module: cinema
+#: report:FilmWithSessionsJR:0 report:FilmWithSessionsLO:0 view:cinema.film:0
+#: field:cinema.film,name:0 field:cinema.session,film_id:0
+msgid "Film"
+msgstr "Pel·lícula"
+
+#. module: cinema
+#: code:addons\cinema\cinema.py:243
+#, python-format
+msgid ""
+"You can not start at this time because it overlaps with the previous session!"
+msgstr "No pot començar a aquesta hora per què es solapa amb la sessió prèvia!"

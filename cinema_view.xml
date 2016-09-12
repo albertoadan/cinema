@@ -1,0 +1,388 @@
+﻿<?xml version="1.0"?>
+<openerp>
+<data>
+    <!-- Definició del menú "Cinema" i submenú "Configuració" -->
+    <menuitem name="Cinema" web_icon="images/cinema.png" web_icon_hover="images/cinema-hover.png" id="menu_cinema"/>
+    <menuitem name="Configuration" id="menu_cinema_configuration" parent="menu_cinema" sequence="99"/>
+
+    <!-- Vista "tree" i acció per l'objecte cinema.screen (Sales) -->
+    <record model="ir.ui.view" id="view_cinema_screen_tree">
+        <field name="name">cinema.screen.tree</field>
+        <field name="model">cinema.screen</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Screens" editable="bottom">
+                <field name="name"/>
+                <field name="capacity"/>
+                <field name="cleaning_time"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_cinema_screen">
+        <field name="name">Screens</field>
+        <field name="res_model">cinema.screen</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <menuitem name="Screens" id="menu_cinema_screen" action="action_cinema_screen" parent="menu_cinema_configuration"/>
+
+    <!-- Vista "tree" i acció per l'objecte cinema.viewer.category (Categories d'espectador) -->
+    <record model="ir.ui.view" id="view_cinema_viewer_category_tree">
+        <field name="name">cinema.viewer.category.tree</field>
+        <field name="model">cinema.viewer.category</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Viewer categories" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_cinema_viewer_category">
+        <field name="name">Viewer categories</field>
+        <field name="res_model">cinema.viewer.category</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <menuitem name="Viewer categories" id="menu_cinema_viewer_category" action="action_cinema_viewer_category" parent="menu_cinema_configuration"/>
+
+    <!-- Vista "tree" i acció per l'objecte cinema.session.type (Tipus de sessions) -->
+    <record model="ir.ui.view" id="view_cinema_session_type_tree">
+        <field name="name">cinema.session.type.tree</field>
+        <field name="model">cinema.session.type</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Session types" editable="bottom">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_cinema_session_type">
+        <field name="name">Session types</field>
+        <field name="res_model">cinema.session.type</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <menuitem name="Session types" id="menu_cinema_session_type" action="action_cinema_session_type" parent="menu_cinema_configuration"/>
+
+    <!-- Vista "tree" i acció per l'objecte cinema.rates (Tarifes) -->
+    <record model="ir.ui.view" id="view_cinema_rates_tree">
+        <field name="name">cinema.rates.tree</field>
+        <field name="model">cinema.rates</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Rates" editable="bottom">
+                <field name="session_type_id"/>
+                <field name="viewer_category_id"/>
+                <field name="price"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_cinema_rates">
+        <field name="name">Rates</field>
+        <field name="res_model">cinema.rates</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree</field>
+    </record>
+    <menuitem name="Rates" id="menu_cinema_ratees" action="action_cinema_rates" parent="menu_cinema_configuration"/>
+
+    <!-- Vistes "form" i "tree" i acció per l'objecte cinema.director (Directors) -->
+    <record model="ir.ui.view" id="view_cinema_director_form">
+        <field name="name">cinema.director.form</field>
+        <field name="model">cinema.director</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Director">
+                <field name="name" select="1"/>
+                <field name="country_id"/>
+                <field name="birthdate"/>
+                <field name="deathdate"/>
+                <field name="film_ids" colspan="4" nolabel="1" >
+                  <tree string="Films">
+                    <field name="name" string="Title"/>
+                    <field name="active"/>
+                    <field name="duration"/>
+                    <field name="web"/>
+                  </tree>
+                </field>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_cinema_director_tree">
+        <field name="name">cinema.director.tree</field>
+        <field name="model">cinema.director</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Directors">
+                <field name="name"/>
+                <field name="country_id"/>
+                <field name="birthdate"/>
+                <field name="deathdate"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_cinema_director">
+        <field name="name">Directors</field>
+        <field name="res_model">cinema.director</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem name="Directors" id="menu_cinema_director" action="action_cinema_director" parent="menu_cinema_configuration"/>
+
+    <!-- Vistes "form", "tree" i "search" i acció per l'objecte cinema.film (Pel·lícules) -->
+    <record model="ir.ui.view" id="view_cinema_film_form">
+        <field name="name">cinema.film.form</field>
+        <field name="model">cinema.film</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Film">
+                <group colspan="4" col="2">
+                    <field name="name" select="1"/>
+                </group>
+                <group colspan="2" col="2">
+                    <group colspan="2" col="4">
+                        <field name="year" select="1"/>
+                        <field name="active" select="1"/>
+                    </group>
+                    <field name="director_id" select="1"/>
+                    <field name="duration"/>
+                    <field name="synopsis"/>
+                    <field name="web" widget="url"/>
+                </group>
+                <group colspan="2" col="1">
+                    <field name="cover" nolabel="1" widget="image"/>
+                </group>
+                <field name="session_ids" colspan="4" nolabel="1" >
+                  <tree string="Sessions">
+                    <field name="init"/>
+                    <field name="screen_id"/>
+                    <field name="n_tickets"/>
+                    <field name="takings"/>
+                  </tree>
+                </field>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_cinema_film_tree">
+        <field name="name">cinema.film.tree</field>
+        <field name="model">cinema.film</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree colors="green:active==True;red:active==False" string="Films">
+                <field name="name"/>
+                <field name="year"/>
+                <field name="active"/>
+                <field name="director_id"/>
+                <field name="duration" />
+                <field name="web" />
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_cinema_film_search">
+        <field name="name">cinema.film.search</field>
+        <field name="model">cinema.film</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+        <search>
+          <group>
+            <filter string="Active" name="f_active"  icon="terp-check"
+                    domain="[('active','=',True)]"/>
+            <filter string="Inactive" name="f_inactive"  icon="terp-dialog-close"
+                    domain="[('active','=',False)]"/>
+            <separator orientation="vertical"/>
+            <field name="director_id" select="1"/>
+          </group>
+        </search>
+      </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_cinema_film">
+        <field name="name">Films</field>
+        <field name="res_model">cinema.film</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{"search_default_f_active":1}</field>
+    </record>
+    <menuitem name="Films" id="menu_cinema_film" action="action_cinema_film" parent="menu_cinema_configuration"/>
+
+    <!-- Vistes "form", "tree", "search" i "calendar" i acció per l'objecte cinema.session (Sessions) -->
+    <record model="ir.ui.view" id="view_cinema_session_form">
+        <field name="name">cinema.session.form</field>
+        <field name="model">cinema.session</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Session">
+                <field name="film_id" select="1"/>
+                <field name="screen_id" on_change="onchange_sc(screen_id)"/>
+                <field name="init"/>
+                <field name="session_type_id"/>
+                <separator colspan="4"/>
+                <field name="capacity"/>
+                <field name="n_tickets"/>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_cinema_session_tree">
+        <field name="name">cinema.session.tree</field>
+        <field name="model">cinema.session</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Sessions">
+                <field name="film_id"/>
+                <field name="screen_id"/>
+                <field name="init"/>
+                <field name="session_type_id"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_cinema_session_search">
+        <field name="name">cinema.session.search</field>
+        <field name="model">cinema.session</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+        <search>
+          <group>
+            <filter string="Opened" name="f_opened" icon="terp-check"
+                    domain="[('init','&gt;',datetime.datetime.utcnow().strftime('%%Y-%%m-%%d %%H:%%M'))]"/>
+            <filter string="Closed" name="f_closed" icon="terp-dialog-close" 
+                    domain="[('init','&lt;=',datetime.datetime.utcnow().strftime('%%Y-%%m-%%d %%H:%%M'))]"/>
+            <separator orientation="vertical"/>
+            <field name="init" string="Date"/>
+            <field name="film_id"/>
+          </group>
+        </search>
+      </field>
+    </record>
+    <record model="ir.ui.view" id="view_cinema_session_calendar">
+        <field name="name">cinema.session.calendar</field>
+        <field name="model">cinema.session</field>
+        <field name="type">calendar</field>
+        <field name="arch" type="xml">
+            <calendar date_start="init" color="film_id">
+              <field name="screen_id"/>
+            </calendar>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_cinema_session">
+        <field name="name">Sessions</field>
+        <field name="res_model">cinema.session</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form,calendar</field>
+        <field name="context">{"search_default_f_opened":1}</field>
+    </record>
+    <menuitem name="Sessions" id="menu_cinema_session" action="action_cinema_session" parent="menu_cinema"/>
+
+    <!-- Vistes "tree" i "search" pels objectes cinema.ticket -->
+    <record model="ir.ui.view" id="view_cinema_ticket_tree">
+        <field name="name">cinema.ticket.tree</field>
+        <field name="model">cinema.ticket</field>
+        <field name="type">tree</field>
+        <field name="priority" eval="10"/>
+        <field name="arch" type="xml">
+            <tree string="Tickets">
+                <field name="session_id"/>
+                <field name="date_time_sale"/>
+                <field name="total"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="view_cinema_ticket_search">
+        <field name="name">cinema.ticket.search</field>
+        <field name="model">cinema.ticket</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search>
+              <group>
+                <field name="session_id" domain="[('init','&gt;',datetime.datetime.utcnow().strftime('%%Y-%%m-%%d %%H:%%M'))]" />
+                <field name="date_time_sale" string="Date of sale"/>
+              </group>
+            </search>
+        </field>
+    </record>
+    
+    <!-- Vista "form" i acció pels objectes cinema.ticket i cinema.ticket.detall (Entrades) 
+         Versió amb BOTÓ per veure el total (però provoca GRAVACIÓ!!!) -->
+    <record model="ir.ui.view" id="view_cinema_ticket_form1" >
+        <field name="name">cinema.ticket.form1</field>
+        <field name="model">cinema.ticket</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Ticket" >
+                <field name="id" invisible="1"/>
+                <group colspan="4" col="2">
+                    <field name="session_id" domain="[('init','&gt;',datetime.datetime.utcnow().strftime('%%Y-%%m-%%d %%H:%%M'))]"
+                                             attrs="{'readonly': [('id','!=', False)]}"/>
+                    <field name="date_time_sale" />
+                </group>
+                <field name="detail_ids" colspan="4" nolabel="1" attrs="{'readonly': [('id','!=', False)]}">
+                  <tree string="Detail" editable="bottom">
+                    <field name="id" invisible="1"/>
+                    <field name="viewer_category_id" on_change="onchange_vc_pr(viewer_category_id,parent.session_id, n_tickets)"/>
+                    <field name="n_tickets" on_change="onchange_nt(n_tickets,price)"/>
+                    <field name="price" on_change="onchange_vc_pr(viewer_category_id,parent.session_id, n_tickets)"/>
+                    <!-- El camp "price" no s'ha posat "readonly" per que, donat que els mètodes on_change no 
+                         interactuen amb els camps "readonly", si fos readonly desapareixeria el valor introduït pel
+                         mètode on_change, en canviar de fila. En no ser readonly, recalculem el valor si l'usuari
+                         el canvia i així tenim la seguretat que s'està omplint adequadament. -->
+                    <field name="total" />
+                  </tree>
+                </field>
+                <button name="button" string="Compute" icon="gtk-execute"/>
+                <field name="total"/>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_cinema_ticket1">
+        <field name="name">Tickets (Version 1)</field>
+        <field name="res_model">cinema.ticket</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_cinema_ticket_form1"/>
+        <field name="context">{"search_default_date_time_sale":time.strftime('%Y-%m-%d',time.gmtime())}</field>
+    </record>
+    <menuitem name="Tickets (Version 1)" id="menu_cinema_ticket1" action="action_cinema_ticket1" parent="menu_cinema" sequence="97"/>
+
+    <!-- Vista "form" i acció pels objectes cinema.ticket i cinema.ticket.detall (Entrades) 
+         Versió amb mètode on_change sobre detail_ids per anar calculant el total -->
+    <record model="ir.ui.view" id="view_cinema_ticket_form2" >
+        <field name="name">cinema.ticket.form2</field>
+        <field name="model">cinema.ticket</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Ticket" >
+                <field name="id" invisible="1"/>
+                <group colspan="4" col="2">
+                    <field name="session_id" domain="[('init','&gt;',datetime.datetime.utcnow().strftime('%%Y-%%m-%%d %%H:%%M'))]"
+                                             attrs="{'readonly': [('id','!=', False)]}"/>
+                    <field name="date_time_sale" />
+                </group>
+                <field name="detail_ids" colspan="4" nolabel="1" attrs="{'readonly': [('id','!=', False)]}"
+                                         on_change="onchange_detail(detail_ids)">
+                  <tree string="Detail" editable="bottom">
+                    <field name="id" invisible="1"/>
+                    <field name="viewer_category_id" on_change="onchange_vc_pr(viewer_category_id,parent.session_id, n_tickets)"/>
+                    <field name="n_tickets" on_change="onchange_nt(n_tickets,price)"/>
+                    <field name="price" on_change="onchange_vc_pr(viewer_category_id,parent.session_id, n_tickets)"/>
+                    <!-- El camp "price" no s'ha posat "readonly" per que, donat que els mètodes on_change no 
+                         interactuen amb els camps "readonly", si fos readonly desapareixeria el valor introduït pel
+                         mètode on_change, en canviar de fila. En no ser readonly, recalculem el valor si l'usuari
+                         el canvia i així tenim la seguretat que s'està omplint adequadament. -->
+                    <field name="total" />
+                  </tree>
+                </field>
+                <group colspan="2"/>
+                <group colspan="2">
+                    <field name="total" colspan="2"/>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="action_cinema_ticket2">
+        <field name="name">Tickets (Version 2)</field>
+        <field name="res_model">cinema.ticket</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="view_id" ref="view_cinema_ticket_form2"/>
+        <field name="context">{"search_default_date_time_sale":time.strftime('%Y-%m-%d',time.gmtime())}</field>
+    </record>
+    <menuitem name="Tickets (Version 2)" id="menu_cinema_ticket2" action="action_cinema_ticket2" parent="menu_cinema" sequence="98"/>
+  </data>
+</openerp>

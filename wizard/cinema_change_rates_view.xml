@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<openerp>
+<data>
+  <record model="ir.ui.view" id="view_cinema_change_rates">
+    <field name="name">cinema.change_rates</field>
+    <field name="model">cinema.change.rates</field>
+    <field name="type">form</field>
+    <field name="arch" type="xml">
+      <form string="Calculating new prices via application rate">
+        <group col="4" colspan="4" attrs="{'invisible':[('state','=','done')]}">
+            <field name="viewer_category_id"/>
+            <label string="(Empty, to change all viewer categories)" colspan="2"/>
+            <field name="session_type_id"/>
+            <label string="(Empty, to change all session types)" colspan="2"/>
+            <field name="percentage"/>
+        </group>
+        <group col="4" colspan="4" attrs="{'invisible':[('state','=','init')]}">
+          <field name="info_updates"/>
+        </group>     
+        <separator colspan="4"/>
+        <group col="2" colspan="2">
+          <field name="state" widget="statusbar" />
+        </group>
+        <group col="2" colspan="2">
+          <button string="Cancel" special="cancel" icon="gtk-cancel" states="init" />
+          <button string="Assign" name="apply_percentage" type="object" icon="gtk-ok" states="init" />
+          <button string="Close" special="cancel" icon="gtk-ok" states="done" />       
+        </group>
+      </form>
+    </field>
+  </record>
+  <record model="ir.actions.act_window" id="action_cinema_change_rates">
+    <field name="name">Calculating new prices via application rate</field>
+    <field name="res_model">cinema.change.rates</field>
+    <field name="view_type">form</field>
+    <field name="view_mode">form</field>
+    <field name="view_id" ref="view_cinema_change_rates"/>
+    <field name="target">new</field>
+  </record>
+  <menuitem name="Wizards" id="menu_cinema_configuration_wizards" parent="menu_cinema_configuration" groups="group_cinema_manager"/>
+  <menuitem name="Calculating new prices via application rate" id="menu_cinema_change_rates" action="action_cinema_change_rates" parent="menu_cinema_configuration_wizards"/>
+</data>
+</openerp>
